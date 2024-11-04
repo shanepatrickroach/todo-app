@@ -13,15 +13,13 @@ const TodoList = (props) => {
 
   return (
     <>
-      {todos.map((todo, todoIndex) => {
+      {filteredTodoList.map((todo, todoIndex) => {
         return (
           <TodoCard
             key={todoIndex}
-            todoIndex={todoIndex}
-            todo={todo}
+            todoIndex={todos.findIndex(val => val.input == todo.input)}
             {...props}
-
-          />
+            todo={todo} />
         )
       })}
 
